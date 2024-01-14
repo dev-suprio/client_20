@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+html,
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0
+}
+
+.heading-img {
+    margin: 10px;
+    width: 40vw;
+}
+
+.heading-title {
+    color: aliceblue;
+    shape-outside: polygon(0 0, 100% 0, 50% 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.heading-des {
+    color: aliceblue;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 84vh;
+    background-color: black;
+    background-image: url(./resources/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    /* Initially set to fully transparent */
+    animation: fadeIn 1s ease-in-out forwards;
+    /* Apply the fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.des {
+    /* ... your existing styles ... */
+    color: yellow;
+    margin-top: 46px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.logo-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    max-height: 50vh;
+}
+
+.logo-container img {
+    max-height: 100%
+}
+
+.buttons {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    width: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.link-button {
+    max-width: 150px;
+    margin: 2vh;
+    transition: transform 0.3s ease;
+}
+
+.link-button:hover {
+    animation: pulse 1s infinite;
+}
+
+::-webkit-scrollbar {
+    background-color: #A2703C;
+    width: 0;
+}
+
+/*
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);            pulse animattion
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+*/
+.copyright {
+    margin: 10px;
+    margin-right: 170px;
+    color: white;
+    text-align: right;
+}
+
+
+@media (orientation: landscape) {
+    .buttons {
+        justify-content: center;
+    }
+
+    .logo-container img {
+        height: 100%
+    }
+}
+
+@media (orientation: portrait) {
+    .logo-container img {
+        padding-top: 2vw;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .heading-img {
+        width: 100vw;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .copyright {
+        text-align: center;
+        margin-right: auto;
+        margin-top: 78px;
+        font-size: 10px;
+    }
+}
